@@ -15,14 +15,14 @@ namespace CatalogueProject
             AttractsGST = taxed;
         }
 
-        public override void PrintProduct()
+        public override string ToString()
         {
-            {
-                Console.WriteLine($" Product Name: {ProductName}");
-                Console.WriteLine($"  Description: {ProductDescription}");
-                Console.WriteLine($"        Price: {ProductPrice}");
-                Console.WriteLine($"Total inc.Gst: {CalculateGST()}");
-            }
+            return $"Name:{ProductName}\n" +
+                   $"Desc:{ProductDescription}\n" +
+                   $"degC:{_storageTemp}\n" +
+                   $"$/kg:{ProductPrice}\n"+
+                   $"$gst:{CalculateGST()}\n";
         }
+
     }
 }

@@ -24,15 +24,7 @@ namespace CatalogueProject
             return Math.Round(_productPrice *(1+Tax.ProductTax),2);
         }
 
-        public virtual void PrintProduct()
-        {
-            {
-                Console.WriteLine($" Product Name: {ProductName}");
-                Console.WriteLine($"  Description: {ProductDescription}");
-                Console.WriteLine($"        Price: {ProductPrice}");
-                Console.WriteLine($"Total inc.Gst: {CalculateGST()}");
-            }
-        }
+
 
     }
 }

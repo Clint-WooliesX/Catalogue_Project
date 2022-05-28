@@ -9,22 +9,25 @@ namespace CatalogueProject
         {
             Meat chops = new Meat("Pork CHops", 14.99, "Australian premium lean pork chops");
 
-            Clothing tShirt = new Clothing("Tshirt", 15.00, "Cotton uni-sex T-Shirt");
+            Clothing tShirt = new Clothing("Tshirt", 15.00, "Cotton uni-sex T-Shirt",14);
 
-            chops.PrintProduct();
+            Console.WriteLine(chops);
 
-            Tax.AdjustGST(.5);
+            Catalogue<Product> myCatalogue = new Catalogue<Product>();
 
-            Console.WriteLine(chops.Gst);
+            myCatalogue.Add(chops);
+            myCatalogue.Add(tShirt);
 
-            chops.PrintProduct();
+            Console.WriteLine(myCatalogue[0]);
+            Console.WriteLine(myCatalogue[1]);
 
-            List<Product> Catalogue = new List<Product>();
+            Clothing.NewProduct("Board Shorts", 10.00, "Mens cotton Board shorts blue and black", 36);
 
-            Catalogue.Add(chops);
-            Catalogue.Add(tShirt);
+           myCatalogue.Add(Clothing.NewProduct("Board Shorts", 10.00, "Mens cotton Board shorts blue and black", 36));
 
-            Console.WriteLine(Catalogue.ToString());
+            Console.WriteLine(myCatalogue[2]);
+
+            Console.WriteLine(myCatalogue.ToArray()[1]);
         }
     }
 }

@@ -3,11 +3,9 @@ using System.Collections.Generic;
 
 namespace CatalogueProject
 {
-    public class Catalogue<T>
+    internal class Catalogue<T> : List<T>
 
     {
-        private List<T>
-        {
-        }
+       
     }
 }
